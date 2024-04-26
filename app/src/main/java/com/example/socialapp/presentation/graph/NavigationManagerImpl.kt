@@ -1,7 +1,6 @@
 package com.example.socialapp.presentation.graph
 
-import kotlinx.coroutines.channels.BufferOverflow
-import kotlinx.coroutines.flow.MutableSharedFlow
+import com.example.socialapp.presentation.extentions.createMutableSharedFlowAsSingleLiveEvent
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import javax.inject.Inject
@@ -10,11 +9,8 @@ import javax.inject.Singleton
 @Singleton
 class NavigationManagerImpl @Inject constructor() : NavigationManager {
 
-    private val navigationDestinationFlow = MutableSharedFlow<Pair<String, Boolean>>(
-        replay = 0,
-        extraBufferCapacity = 1,
-        onBufferOverflow = BufferOverflow.DROP_OLDEST,
-    )
+    private val navigationDestinationFlow =
+        createMutableSharedFlowAsSingleLiveEvent<Pair<String, Boolean>>()
 
     override fun navigateTo(route: String, isBackStackClear: Boolean) {
         navigationDestinationFlow.tryEmit(route to isBackStackClear)

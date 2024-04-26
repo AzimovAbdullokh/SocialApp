@@ -1,6 +1,6 @@
 package com.example.domain.usecase
 
-import com.example.domain.models.UserAnswerDomainModel
+import com.example.domain.models.UserProfileDomainModel
 import com.example.domain.repository.UserAuthRepository
 
 class UserLoginUseCaseImpl(
@@ -10,7 +10,7 @@ class UserLoginUseCaseImpl(
     override suspend fun invoke(
         userName: String,
         userPassword: String,
-    ): Result<UserAnswerDomainModel> {
+    ): Result<UserProfileDomainModel> {
         return userAuthRepository.login(userName, userPassword)
     }
 }

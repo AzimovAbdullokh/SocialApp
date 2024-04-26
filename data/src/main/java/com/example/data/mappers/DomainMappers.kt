@@ -1,8 +1,28 @@
 package com.example.data.mappers
 
-import com.example.data.models.UserAnswerResponseModel
-import com.example.domain.models.UserAnswerDomainModel
+import com.example.data.models.ListProfileModelResponse
+import com.example.data.models.UserAvatarResponseModel
+import com.example.data.models.UserProfileResponseModel
+import com.example.domain.models.UserAvatarDomainModel
+import com.example.domain.models.UserProfileDomainModel
+import com.example.domain.models.UsersListDomainModel
 
-fun UserAnswerResponseModel.toDomain() = UserAnswerDomainModel(
-    objectId = objectId, userAvatar = userAvatar
+fun UserAvatarResponseModel.toDomain() = UserAvatarDomainModel(
+    name = name,
+    type = type,
+    url = url,
+)
+
+fun UserProfileResponseModel.toDomain() = UserProfileDomainModel(
+    username = username.orEmpty(),
+    firstName = firstName.orEmpty(),
+    lastName = lastName.orEmpty(),
+    userBio = userBio.orEmpty(),
+    userLocation = userLocation.orEmpty(),
+    userAvatar = userAvatar?.toDomain() ?: UserAvatarDomainModel.UNKNOWN,
+    objectId = objectId,
+)
+
+fun ListProfileModelResponse.toDomain() = UsersListDomainModel(
+    result = results.map { it.toDomain() }
 )

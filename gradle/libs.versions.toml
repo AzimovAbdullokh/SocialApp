@@ -1,5 +1,7 @@
 [versions]
-agp = "8.3.1"
+accompanistSystemuicontroller = "0.34.0"
+agp = "8.2.0"
+coil = "2.6.0"
 converterGson = "2.9.0"
 hiltAndroid = "2.48"
 hiltAndroidCompiler = "2.48"
@@ -14,16 +16,22 @@ activityCompose = "1.8.2"
 composeBom = "2023.08.00"
 appcompat = "1.6.1"
 loggingInterceptor = "4.12.0"
+lottieCompose = "6.4.0"
 material = "1.11.0"
 jetbrainsKotlinJvm = "1.9.0"
 kspVersion = "1.9.10-1.0.13"
 hiltVersion = "2.48"
 mockk = "1.13.5"
+androidxLifecycle = "2.6.2"
+
 retrofit = "2.9.0"
 
 [libraries]
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-hilt-navigation-compose-v120 = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+coil = { module = "io.coil-kt:coil", version.ref = "coil" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coil" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
 hilt-android-compiler-v248 = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hiltAndroidCompiler" }
 hilt-android-v248 = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
@@ -42,9 +50,12 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "loggingInterceptor" }
+lottie-compose = { module = "com.airbnb.android:lottie-compose", version.ref = "lottieCompose" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

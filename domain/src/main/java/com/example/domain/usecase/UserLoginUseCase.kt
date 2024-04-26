@@ -1,10 +1,10 @@
 package com.example.domain.usecase
 
-import com.example.domain.models.UserAnswerDomainModel
+import com.example.domain.models.UserProfileDomainModel
 
 interface UserLoginUseCase {
     suspend operator fun invoke(
         userName: String,
         userPassword: String,
-    ): Result<UserAnswerDomainModel>
+    ): Result<UserProfileDomainModel>
 }

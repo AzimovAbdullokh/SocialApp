@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
 
+    /** Base **/
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -71,6 +72,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    /** lifecycle **/
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+
     /** hilt-android **/
     implementation(libs.hilt.android.v248)
     ksp(libs.hilt.android.compiler.v248)
@@ -83,4 +88,12 @@ dependencies {
 
     /** Mockk **/
     testImplementation(libs.mockk)
-}
+
+    /** Compose coil **/
+    implementation(libs.coil.compose)
+
+    /** Lottie animation **/
+    implementation(libs.lottie.compose)
+
+    /** Ui controller **/
+    implementation(libs.accompanist.systemuicontroller)}
