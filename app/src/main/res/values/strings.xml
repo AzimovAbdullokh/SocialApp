@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">SocialApp</string>
+    <string name="register_text">Sign Up</string>
+    <string name="login_text">"Login Up"</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="email">Email</string>
+    <string name="paswword">Password</string>
+    <string name="dont_have_account">You dont have an account?</string>
+    <string name="have_account">Already have an account?</string>
+</resources>
